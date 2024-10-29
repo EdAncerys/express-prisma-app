@@ -1,0 +1,8 @@
+-- CreateTable
+CREATE TABLE "Joke" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "category" TEXT NOT NULL,
+    "joke" TEXT NOT NULL,
+    "safe" BOOLEAN NOT NULL,
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
