@@ -1,5 +1,6 @@
 // types/Joke.ts
 export interface Joke {
+  joke: string;
   error: boolean;
   category: string;
   type: 'single' | 'twopart';
