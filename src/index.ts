@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Joke as JokeType } from '../types/Joke';
 import { PrismaClient } from '@prisma/client';
 
-const app = express();
+export const app = express();
 const PORT = process.env.PORT || 3000;
 const prisma = new PrismaClient();
 
@@ -22,7 +22,7 @@ app.get('/joke/:type', async (req: Request<Params>, res: any) => {
     const response = await axios.get<JokeType>(
       `https://v2.jokeapi.dev/joke/${jokeType}`
     );
-    console.log('RESPONSE ', response);
+    console.log('RESPONSE ', response?.statusText);
 
     if (response.data.error) {
       return res.status(404).json({ message: 'No joke found.' });
